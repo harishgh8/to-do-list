@@ -1,7 +1,7 @@
 
     
 body {
-    margin: 0;
+    margin: 20px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;
@@ -10,43 +10,53 @@ body {
     padding: 50;
     font-size: 15px;
   }
-  
-  #app {
+
+  .header {
     margin: auto;
+    text-align: left;
+  }
+  ol {
+    display: flex;
+    flex-direction: column;
     width: 500px;
-    padding: 0px 15px;
-  }
-  
-  #header {
-    margin: auto;
-    text-align: center;
-  }
-
-  #list {
-    background-color:#a67a7a;
-    padding: 15px;
+    background-color: #d7c69f;
     border-radius: 5px;
-    font-size: 20px;
-    margin:5px;
-    color: white;
-    height: 25px;
-  }
+    border: none;
+    
 
- #delete_btn {
+  }
+.list_task {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #483838;
+    margin: 5px;
+}
+input {
     background-color: #D2D79F;
-    float: right;
     border-radius: 5px;
     border: none;
     padding: 10px;
     color: #483838;
   }
-  #input__submit {
+ .add_btn {
     background-color: #42855B;
     border-radius: 5px;
     border: none;
-    padding: 10px;
+    padding: 18px;
     color: white;
     margin:5px;
+  
+ 
+  }
+ .del_btn {
+    background-color: #ec900f;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin:5px;
+
   }
   input {
     width: 500px;

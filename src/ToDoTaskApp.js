@@ -1,9 +1,18 @@
 import React, { useState } from "react";
+import "./style.css";
 
 const ToDoTaskApp = () => {
   const today = new Date().toLocaleDateString();
   //   create an array of state that holds input task
-  const [toDoTask, setToDoTask] = useState(["milk", "honey", "mangoes"]);
+  const [toDoTask, setToDoTask] = useState([
+    "milk",
+    "honey",
+    "mangoes",
+    "potato",
+    "tomato",
+    "chillies",
+    "green-pepper",
+  ]);
 
   //   function to add to list
   const addToList = (tasks) => {
@@ -24,7 +33,7 @@ const ToDoTaskApp = () => {
 
   return (
     <>
-      <h1>Todo Task List for {today} </h1>
+      <h1 className="header">Todo Task List for {today} </h1>
       <TaskAdd addToList={addToList} setToDoTask={setToDoTask} />
       <TaskList
         deleteTasks={deleteTasks}
@@ -54,7 +63,9 @@ const TaskAdd = ({ addToList, setToDoTask }) => {
     <>
       <span>
         <input type="text" onChange={handleChange} value={input} />
-        <button onClick={handlSubmit}>Add</button>
+        <button className="add_btn" onClick={handlSubmit}>
+          Add
+        </button>
       </span>
     </>
   );
@@ -74,15 +85,19 @@ const TaskList = ({ deleteTasks, toDoTask }) => {
 };
 
 const EachTasks = ({ deleteTasks, lists }) => {
+  const timeStamp = new Date().toLocaleTimeString();
   const handlSubmit = () => {
     deleteTasks(lists);
   };
   return (
     <>
-      <li>
-        <span>
-          {lists} <button onClick={handlSubmit}>Del</button>
-        </span>
+      <li className="list_task">
+        <span>({timeStamp}) </span>
+        {lists}
+
+        <button className="del_btn" onClick={handlSubmit}>
+          Del
+        </button>
       </li>
     </>
   );
